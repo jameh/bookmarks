@@ -1,0 +1,45 @@
+.container-fluid {
+	width: 300px;
+	text-align: center;
+}
+
+button, a {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.btn {
+	cursor: default;
+}
+
+.hide-button {
+	float: right;
+	display: none;
+	color: #222;
+}
+
+.hide-button:hover {
+	color: #111;
+}
+
+#category-list li {
+	position: relative;
+}
+
+.category-button:hover {
+	background-color: #aaa;
+	transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+	background-color: #278e01;
+}
+
+li:hover .hide-button {
+	display: block;
+	position: absolute;
+	font-size: 16px;
+	top: 1px;
+	right: -1px;
+	cursor: pointer;
+}

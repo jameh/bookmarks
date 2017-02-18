@@ -1,0 +1,33 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lib/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <script src="scripts/popup.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <a target="_blank" class="btn" id="map" href="map.html">Map</a>
+        <button class="btn btn-danger" id="clear-all-button">Clear all</button>
+      </div>
+    </div>
+    <div class="container-fluid" id="categories">
+      <ul id="category-list" class="list-inline">
+      </ul>
+    </div>
+    <div class="container-fluid" id="new-category">
+      <form class="form-inline" id="new-category-form">
+        <input type="text" class="form-control" id="new-category-form-text-input" placeholder="New category">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
