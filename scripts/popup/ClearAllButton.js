@@ -4,8 +4,8 @@ var log = require("../common/log.js");
 module.exports = function(clearAllButtonElement, categoryList) {
   function clearAllButtonClick(e) {
     data.clear(function() {
-      while (categoryList.firstChild) {
-        categoryList.removeChild(categoryList.firstChild);
+      while (categoryList.element.firstChild) {
+        categoryList.element.removeChild(categoryList.element.firstChild);
       }
       log("Clear all category list data.")
     });

@@ -3,6 +3,8 @@ var log = require("../common/log.js");
 
 module.exports = function(listElement) {
 
+  this.element = listElement;
+
   function populateCategoryList() {
       var categoryList = document.getElementById("category-list"); // ul element
       data.get(null, function(storage) {
