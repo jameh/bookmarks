@@ -7,7 +7,7 @@ have [npm][1] installed
 have [bower][a], [gulp][b], [browserify][c] installed, so
 
 ```
-npm install -g bower gulp browserify
+npm install
 ```
 
 fetch and scaffold the external dependencies ([d3][2], [bootstrap][3], [ionicons][4])
