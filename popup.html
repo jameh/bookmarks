@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/lib/bootstrap.min.css">
     <link rel="stylesheet" href="css/lib/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="css/popup.css">
-    <script src="scripts/popup.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -24,10 +23,11 @@
     </div>
     <div class="container-fluid" id="new-category">
       <form class="form-inline" id="new-category-form">
-        <input type="text" class="form-control" id="new-category-form-text-input" placeholder="New category">
+        <input type="text" class="form-control" name="new-category-text" id="new-category-form-text-input" placeholder="New category">
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+    <script src="scripts/build/popup.js"></script>
   </body>
 </html>
 

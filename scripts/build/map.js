@@ -3,6 +3,10 @@ exports.get = function(category, callback) {
   chrome.storage.sync.get(category || null, callback);
 };
 
+exports.set = function(obj, callback) {
+  chrome.storage.sync.set(obj, callback);
+};
+
 exports.onChanged = {
   addListener: function(callback) {
     chrome.storage.onChanged.addListener(function(changes, areaName) {
