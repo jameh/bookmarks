@@ -4,6 +4,9 @@ var data = require("../common/data.js");
 
 module.exports = function(listElement, categorySelect) {
 
+  data.onChanged.addListener(updateFromStorage);
+  categorySelect.addEventListener("change", updateBookmarksList);
+
   function buildBookmarksList() {
     data.get(categorySelect.getValue(), function(storage) {
       if (!storage.hasOwnProperty(categorySelect.getValue())) {
@@ -21,8 +24,6 @@ module.exports = function(listElement, categorySelect) {
           listElement.appendChild(li);
         }
       }
-      data.onChanged.addListener(updateFromStorage);
-      categorySelect.addEventListener("change", updateBookmarksList);
     });
   }
 
@@ -38,6 +39,7 @@ module.exports = function(listElement, categorySelect) {
       if (changes.hasOwnProperty(category)) {
         if (category === categorySelect.getValue()) {
           updateBookmarksList();
+          break;
         }
       }
     }

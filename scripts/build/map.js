@@ -7,6 +7,14 @@ exports.set = function(obj, callback) {
   chrome.storage.sync.set(obj, callback);
 };
 
+exports.clear = function(callback) {
+  chrome.storage.sync.clear(callback);
+};
+
+exports.remove = function(category) {
+  chrome.storage.sync.remove(category);
+};
+
 exports.onChanged = {
   addListener: function(callback) {
     chrome.storage.onChanged.addListener(function(changes, areaName) {
@@ -43,6 +51,9 @@ var data = require("../common/data.js");
 
 module.exports = function(listElement, categorySelect) {
 
+  data.onChanged.addListener(updateFromStorage);
+  categorySelect.addEventListener("change", updateBookmarksList);
+
   function buildBookmarksList() {
     data.get(categorySelect.getValue(), function(storage) {
       if (!storage.hasOwnProperty(categorySelect.getValue())) {
@@ -60,8 +71,6 @@ module.exports = function(listElement, categorySelect) {
           listElement.appendChild(li);
         }
       }
-      data.onChanged.addListener(updateFromStorage);
-      categorySelect.addEventListener("change", updateBookmarksList);
     });
   }
 
@@ -77,6 +86,7 @@ module.exports = function(listElement, categorySelect) {
       if (changes.hasOwnProperty(category)) {
         if (category === categorySelect.getValue()) {
           updateBookmarksList();
+          break;
         }
       }
     }
