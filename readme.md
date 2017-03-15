@@ -4,7 +4,7 @@
 
 have [npm][1] installed
 
-install [bower][a], [gulp][b], [browserify][c]:
+install node dependencies:
 
 ```
 npm install
@@ -26,6 +26,15 @@ there's also a clean target for gulp that removes the scaffolded and built files
 gulp clean
 ```
 
+## Develop
+
+use the default gulp target to watch files for changes, and automatically rebundle the scripts
+```
+npm install
+bower install
+gulp
+```
+
 ## Use
 
 have [chrome][5] installed
@@ -43,6 +52,3 @@ start bookmarking
 [3]: http://getbootstrap.com/
 [4]: http://ionicons.com/
 [5]: https://www.google.com/chrome/browser/desktop/index.html
-[a]: https://bower.io/
-[b]: http://gulpjs.com/
-[c]: http://browserify.org/

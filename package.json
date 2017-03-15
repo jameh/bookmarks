@@ -13,6 +13,8 @@
     "browserify": "^14.1.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-notify": "^3.0.0",
+    "gutil": "^1.6.4",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
   }
