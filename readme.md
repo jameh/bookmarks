@@ -4,19 +4,19 @@
 
 have [npm][1] installed
 
-have [bower][a], [gulp][b], [browserify][c] installed, so
+install [bower][a], [gulp][b], [browserify][c]:
 
 ```
 npm install
 ```
 
-fetch the external dependencies ([d3][2], [bootstrap][3], [ionicons][4])
+fetch the external dependencies ([d3][2], [bootstrap][3], [ionicons][4]):
 
 ```
 bower install
 ```
 
-and scaffold, bundle using browserify for browser
+and scaffold, bundle using browserify for browser:
 ```
 gulp build
 ```
@@ -25,6 +25,8 @@ there's also a clean target for gulp that removes the scaffolded and built files
 ```
 gulp clean
 ```
+
+## Use
 
 have [chrome][5] installed
 
