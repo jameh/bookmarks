@@ -19,9 +19,7 @@ gulp bower
 
 bundle using browserify for browser
 ```
-mkdir scripts/build
-browserify -o scripts/build/map.js -e scripts/map.js
-browserify -o scripts/build/popup.js -e scripts/popup.js
+gulp browserify
 ```
 
 have [chrome][5] installed
