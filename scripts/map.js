@@ -1,5 +1,3 @@
-var data = require("./common/data.js");
-
 var CategorySelect = require("./map/CategorySelect.js"),
     categorySelectElement = document.getElementById("category-select"),
     categorySelect = new CategorySelect(categorySelectElement);
