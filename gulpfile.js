@@ -25,19 +25,6 @@ gulp.task('bower', function() {
 
 });
 
-gulp.task('browserify', function() {
-  gutil.log("Bundling files with browserify.");
-  return browserify('./scripts/map.js')
-      .bundle()
-      .pipe(source('map.js'))
-      .pipe(gulp.dest(buildDir))
-    &&
-    browserify('./scripts/popup.js')
-      .bundle()
-      .pipe(source('popup.js'))
-      .pipe(gulp.dest(buildDir));
-});
-
 function handleErrors() {
   var args = Array.prototype.slice.call(arguments);
   notify.onError({
@@ -48,11 +35,10 @@ function handleErrors() {
 }
 
 function build(file, watch) {
-  var props = {entries: [file], debug: true};
+  var props = {entries: [scriptsDir + '/' + file], debug: true};
   var bundler = watch ? watchify(browserify(props)) : browserify(props);
   function rebundle() {
-    return bundler
-      .bundle()
+    return bundler.bundle()
       .on('error', handleErrors)
       .pipe(source(file))
       .pipe(gulp.dest(buildDir));
@@ -65,13 +51,13 @@ function build(file, watch) {
 }
 
 gulp.task('build', ['bower'], function() {
-  return build(scriptsDir + '/' + 'map.js', false) &&
-         build(scriptsDir + '/' + 'popup.js', false);
+  return build('map.js', false) &&
+         build('popup.js', false);
 });
 
 gulp.task('default', ['build'], function() {
-  return build(scriptsDir + '/' + 'map.js', true) && 
-         build(scriptsDir + '/' + 'popup.js', true);
+  return build('map.js', true) && 
+         build('popup.js', true);
 });
 
 gulp.task('clean', function() {
